@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0월 4일</title>
+  <script id="enty-theme-boot">
+    (function () {
+      var root = document.documentElement;
+      function readable(hex) {
+        var f = function (i) {
+          var v = parseInt(hex.substr(i, 2), 16) / 255;
+          return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+        };
+        var L = 0.2126 * f(1) + 0.7152 * f(3) + 0.0722 * f(5);
+        return 1.05 / (L + 0.05) >= (L + 0.05) / 0.0567 ? "#ffffff" : "#0d141d";
+      }
+      try {
+        var hash = (location.hash.match(/theme=([^&]+)/) || [])[1];
+        var raw = hash
+          ? atob(decodeURIComponent(hash))
+          : localStorage.getItem("enty-theme") || "{}";
+        var state = JSON.parse(raw) || {};
+        var mode = state.mode || "auto";
+        if (mode === "auto") {
+          mode = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        root.setAttribute("data-theme", mode);
+        var custom = (state.custom || {})[mode] || {};
+        for (var key in custom) {
+          if (!/^#[0-9a-f]{6}$/i.test(custom[key])) continue;
+          root.style.setProperty("--accent-" + key, custom[key]);
+          if (key === "이사야" || key === "리베론") {
+            root.style.setProperty("--on-" + key, readable(custom[key]));
+          }
+        }
+      } catch (e) {
+      }
+      try {
+        var saved = JSON.parse(localStorage.getItem("enty-avatars") || "{}");
+        var rules = "";
+        var accounts = {"이사야":"@2nd_Isaiah","리베론":"@2nd_Liberon"};
+        for (var name in accounts) {
+          var gen = root.getAttribute("data-gen-" + name);
+          var url = gen && saved[name + ":" + gen];
+          if (!url || url.slice(0, 11) !== "data:image/") continue;
+          var at = '.ttobot-status[data-account="' + accounts[name] + '"] .ttobot-avatar';
+          rules += at + '{background-image:url("' + url + '");background-size:cover;background-position:center}';
+          rules += at + " img{visibility:hidden}";
+        }
+        if (rules) {
+          var style = document.createElement("style");
+          style.id = "enty-avatar-style";
+          style.textContent = rules;
+          document.head.appendChild(style);
+        }
+      } catch (e) {
+      }
+      try {
+        if (window.self !== window.top) root.classList.add("in-pane");
+      } catch (e) {
+        root.classList.add("in-pane");
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="../style/ttobot.css">
+</head>
+<body>
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">벌써 4번째. 왜 꼭 이 날일까요 ? (수첩에 메모하다 시선을 눈치채면 가볍게 손을 흔든다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 21일 오후 10:52</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">늘 이래서 그런가...~ 이제 이건 메모도 안 하고 있긴 해., 사샤는 아직도 눈물에 대해서 메모하나 보네. 이번엔 무슨 느낌이었어? (기웃거리며 네 수첩을 들여다본다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 21일 오후 11:20</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">늘 같은게 언젠가 변할 때가 온다면 그 때를 위해서 기록을 해두는 거죠.(이름이 각인 된 만년필을 가볍게 흔들었다. 기록은 4년간 변함이 없었지만 꼼꼼히 정리 되어있었다.) 이전과 다를바는 없었어요. 갑자기 눈물이 났죠. 리비도 마찬가지죠? (옆에 앉으라는 듯 의자를 툭툭 두드렸다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 22일 오전 12:26</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">당연히 났지. 그동안 뭐 하나 해결한 거 없이 눈물만 흘리고 있네., 눈물이라도 어디 담아 놓으면 언젠간 단서로 쓸 수 있으려나? (네가 옆자리를 툭툭 두드리는 소리에 그쪽을 내려다보곤, 더 망설일 것도 없다는 듯 냅다 옆에 앉았다. 그러고는 주머니 속 만년필을 꺼내 펜 뒤쪽으로 턱 끝을 꾹꾹 누르며, 수첩과 네 얼굴을 번갈아 살폈다.) 오늘은 뭘 적었어? 작년이랑은 좀 달랐나?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 22일 오후 04:19</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">괜찮은 아이디어 인데요? 왜 그 생각을 못했지? ( 기억해야 할 일에 네가 말한 내용을 적었다. 내년부터 당장 실행하려는 생각이 가득했다.) 정말 아쉽지만 이번에도 마찬가지에요. (변화 없음이라는 글씨가 있는 부분을 만년필로 톡톡 두드렸다. 대부분의 학생 이름이 적혀있었다.) 작년이랑 달라진 건 오히려 리비의 얼굴 아닌가요? 이건 어디서 생긴 상처에요? ( 네 콧등을 가리켰다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 23일 오전 03:44</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(무언가를 적는 것을 보곤, 당장이라도 실행하겠구나, 하는 생각이 들었다. 제 앞에 너는 그럴 사람이었으니. 네 손끝과 수첩 위의 글자를 번갈아 살피다가, 문득 제 눈가를 손끝으로 가볍게 눌러 보았다.) 눈이라도 비비면 어떻게 조금은 더 나오려나., 내년까지 기다리기엔 내년에도 이럴지 모르니까 말이야. (변화 없음... 이라는 명단 안에 제 이름이 적혀 있나 기웃거리며 살피다, 네 시선이 닿기 전에 괜히 아무렇지 않은 척 고개를 조금 뒤로 뺐다. 그러다 제 얼굴을 가리킨 네 손짓에 눈을 끔벅이곤) 그냥 이것저것 실험을 하다., 조준을 잘못했지 뭐야~ 눈 바로 앞을 스쳐 지나갔는데, 좀 아찔하긴 하더라고.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 23일 오후 10:54</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">지금은 채집 도구가 없으니까 다음에 부탁 드릴게요. ( 누르던 네 손을 손가락으로 가볍게 잡고 내렸다.) 래번클로는 대부분 몰래 나가는 일들이 잦아서 신경 안 썼는데 대체 무슨 실험을 한 거에요? 실험이 아니라 결투라도 한 줄 오해하겠어요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 24일 오전 01:23</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(내려지는 손에 별다른 힘을 주지 않고 순순히 손을 내려놓았다.) 호그스미드 가서 채집 도구 비슷한 거라도 사둘까 하는데. 어때? (로브 안쪽 품에서 작은 수첩을 꺼내고, 펜 끝을 잠시 허공에 세워 둔 채 뭐라고 적어야 정확할지 고민하다가, 쇼핑 리스트에 ‘무언가를 담을 채집 도구’라고 적어 내려갔다.) ... ... 사샤는 몰래 나가는 거 다 알고 있었구나? (괜히 머쓱하게 웃으며 수첩 모서리를 손끝으로 만져댔다.) 다들 그렇게 오해하곤 하더라고. 그런데 정말... 별거 없었어. 뭣하면 나중에 구경이라도 올래?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 24일 오전 02:21</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">괜찮은 생각이에요. 부엉이 우편으로도 살 수 있지만 직접 보고 고르는게 가장 좋으니까요. 더비시 앤 뱅스에 같이 가봐요~ (쇼핑 리스트에는 뭘 적었나 시선을 수첩으로 옮겼다.) 저도 몰래 자주 나가는걸요? 멀리서지만 몇 번 리비를 봤어요. 친구의 걷는 방법이나 습관 같은 건 잘 기억하고 있답니다? (교수님께 이르지 않을 거란 걸 알지만 비밀로 하도록 해요. 라며 덧붙였다.)그래요? 그럼 이겼냐고 대답하나요(농조) 음? 말을 안해서 비밀로 하는 줄 알았는데. 제가 가도 되는 건가요?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 24일 오후 08:41</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그럴까? 호그스미드 도착하자마자 같이 가보자. (이어 더비시 앤..뱅스... 라고 말하며 수첩에 그대로 적더니, 끝엔 별을 그려내며 사샤. 라고 적어 마무리했다. 정말 잊지 않겠다는 듯 펜 끝으로 별표를 한 번 더 콕. 찍고 나서야 고개를 들었다.) 발자국이나 머리카락이라도 남겼다간 사샤에게는 금방 들키겠는데? 정말 공중으로 떠 다니며...투명망토가 있는 게 아니라면 말이야... ...무엇이든 졌다고는 절대 말 못 하지~ (흠흠.) 그나저나., 말을 안 해서 비밀. 이라니 이것도 알고 있었구나? 그럼 더 이상 비밀이 아니게 되는데., 상관없지 않을까? 사샤라면 어디 가서 이야기를 할리도 없고 말이지. (주변 눈치를 살피다, 고개를 살짝 숙여 입가를 가리고는, 요즘. 엄청 연습하는 게 있거든. 하며 아주 작게 속닥였다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 24일 오후 08:59</div>
+  </div>
+  <script src="../search.js"></script>
+  <script src="../manifest.js"></script>
+  <script src="../theme.js"></script>
+</body>
+</html>

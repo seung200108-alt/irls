@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2월 51일</title>
+  <script id="enty-theme-boot">
+    (function () {
+      var root = document.documentElement;
+      function readable(hex) {
+        var f = function (i) {
+          var v = parseInt(hex.substr(i, 2), 16) / 255;
+          return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+        };
+        var L = 0.2126 * f(1) + 0.7152 * f(3) + 0.0722 * f(5);
+        return 1.05 / (L + 0.05) >= (L + 0.05) / 0.0567 ? "#ffffff" : "#0d141d";
+      }
+      try {
+        var hash = (location.hash.match(/theme=([^&]+)/) || [])[1];
+        var raw = hash
+          ? atob(decodeURIComponent(hash))
+          : localStorage.getItem("enty-theme") || "{}";
+        var state = JSON.parse(raw) || {};
+        var mode = state.mode || "auto";
+        if (mode === "auto") {
+          mode = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        root.setAttribute("data-theme", mode);
+        var custom = (state.custom || {})[mode] || {};
+        for (var key in custom) {
+          if (!/^#[0-9a-f]{6}$/i.test(custom[key])) continue;
+          root.style.setProperty("--accent-" + key, custom[key]);
+          if (key === "이사야" || key === "리베론") {
+            root.style.setProperty("--on-" + key, readable(custom[key]));
+          }
+        }
+      } catch (e) {
+      }
+      try {
+        var saved = JSON.parse(localStorage.getItem("enty-avatars") || "{}");
+        var rules = "";
+        var accounts = {"이사야":"@2nd_Isaiah","리베론":"@2nd_Liberon"};
+        for (var name in accounts) {
+          var gen = root.getAttribute("data-gen-" + name);
+          var url = gen && saved[name + ":" + gen];
+          if (!url || url.slice(0, 11) !== "data:image/") continue;
+          var at = '.ttobot-status[data-account="' + accounts[name] + '"] .ttobot-avatar';
+          rules += at + '{background-image:url("' + url + '");background-size:cover;background-position:center}';
+          rules += at + " img{visibility:hidden}";
+        }
+        if (rules) {
+          var style = document.createElement("style");
+          style.id = "enty-avatar-style";
+          style.textContent = rules;
+          document.head.appendChild(style);
+        }
+      } catch (e) {
+      }
+      try {
+        if (window.self !== window.top) root.classList.add("in-pane");
+      } catch (e) {
+        root.classList.add("in-pane");
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="../style/ttobot.css">
+</head>
+<body>
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">나중에 또 봐요~ (래번클로들 팔짱 끼고 감)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 6월 20일 오후 11:42</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">어? (날 어디로...? 질질 끌려감...)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 6월 20일 오후 11:43</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">어? (이쪽 진영 래번클로들이라 생각했는데 리비도? 나쁘지 않은 듯? ) 갈래요? (어딜)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 6월 20일 오후 11:44</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">어디를? (불사조 캠프 바라보다, 죽음을 먹는 자들 캠프 바라보다, 네 눈을 바라봄.) 아?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 6월 20일 오후 11:46</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(웃으면서 팔짱 꽈악 낌..꽈아아악) 하핫.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 6월 20일 오후 11:46</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(아야야! 하고 소리 한 번 내보곤) 이렇게 공개 스파이 시켜주려고?... 생각해 보니 이대로 끌려가면 좋을지도~ 자, 가자 사샤!</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 6월 20일 오후 11:52</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">리비, 스파이는 들키지 않고 돌아가야 스파이로 남는 거지 들키면 어떻게 되는지 몰라요~? (네 볼을 꾸욱 누르고 꼈던 팔짱을 푼다. ) 자자, 돌아가세요 가서 쉬셔야죠~</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 6월 20일 오후 11:58</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">당연히 사샤 네가... 아니라고 소개시켜 줘야지.., (볼 꾹 눌리곤 풀려난다... 네 머리를 텁텁 쓰다듬곤 손을 작게 흔든다.) 고생했어~</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 6월 21일 오전 12:01</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">제가 변호해도 다들 안 믿지 않을까요? 불사조의 기사단을 배신하고 이리온 리비? 저라도 안 믿어요. (텁텁..쓰다듬에 헝크러진 머리를 쓱쓱 정리하며) 내일 음, 아니다, 그냥 다음에 만나요 다음에.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 6월 21일 오전 12:07</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">... ... 꽤 좋은 칭찬이겠지? (머리칼을 정돈하는 모습에 괜히 손바닥으로 네 머리를 슥슥 쓰다듬듯 문질러봄.) 그., 어. (어디 보자... 네 모습을 훑어본다.) 그래. 다음에 만나자, 다음에.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 6월 21일 오전 12:22</div>
+  </div>
+  <script src="../search.js"></script>
+  <script src="../manifest.js"></script>
+  <script src="../theme.js"></script>
+</body>
+</html>

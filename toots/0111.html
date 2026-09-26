@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1월 11일</title>
+  <script id="enty-theme-boot">
+    (function () {
+      var root = document.documentElement;
+      function readable(hex) {
+        var f = function (i) {
+          var v = parseInt(hex.substr(i, 2), 16) / 255;
+          return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+        };
+        var L = 0.2126 * f(1) + 0.7152 * f(3) + 0.0722 * f(5);
+        return 1.05 / (L + 0.05) >= (L + 0.05) / 0.0567 ? "#ffffff" : "#0d141d";
+      }
+      try {
+        var hash = (location.hash.match(/theme=([^&]+)/) || [])[1];
+        var raw = hash
+          ? atob(decodeURIComponent(hash))
+          : localStorage.getItem("enty-theme") || "{}";
+        var state = JSON.parse(raw) || {};
+        var mode = state.mode || "auto";
+        if (mode === "auto") {
+          mode = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        root.setAttribute("data-theme", mode);
+        var custom = (state.custom || {})[mode] || {};
+        for (var key in custom) {
+          if (!/^#[0-9a-f]{6}$/i.test(custom[key])) continue;
+          root.style.setProperty("--accent-" + key, custom[key]);
+          if (key === "이사야" || key === "리베론") {
+            root.style.setProperty("--on-" + key, readable(custom[key]));
+          }
+        }
+      } catch (e) {
+      }
+      try {
+        var saved = JSON.parse(localStorage.getItem("enty-avatars") || "{}");
+        var rules = "";
+        var accounts = {"이사야":"@2nd_Isaiah","리베론":"@2nd_Liberon"};
+        for (var name in accounts) {
+          var gen = root.getAttribute("data-gen-" + name);
+          var url = gen && saved[name + ":" + gen];
+          if (!url || url.slice(0, 11) !== "data:image/") continue;
+          var at = '.ttobot-status[data-account="' + accounts[name] + '"] .ttobot-avatar';
+          rules += at + '{background-image:url("' + url + '");background-size:cover;background-position:center}';
+          rules += at + " img{visibility:hidden}";
+        }
+        if (rules) {
+          var style = document.createElement("style");
+          style.id = "enty-avatar-style";
+          style.textContent = rules;
+          document.head.appendChild(style);
+        }
+      } catch (e) {
+      }
+      try {
+        if (window.self !== window.top) root.classList.add("in-pane");
+      } catch (e) {
+        root.classList.add("in-pane");
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="../style/ttobot.css">
+</head>
+<body>
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(창문 바깥에서 톡톡. 무언가 일정한 간격으로 유리를 두들기는 소리가 들린다. 어디서 자주 본 듯한 익숙한... 까치 한 마리가, 창틀에 앉아 안쪽을 빤히 바라보고 있다. 그 작은 목에는 얇게 접힌 쪽지 하나가 조심스레 걸려있다.) [요새 바빠? 요새 잘 못 마주치는 것 같아서~ 이러다 얼굴 까먹겠어!]</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 15일 오후 12:59</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">음? (꼬리가 긴 까치는 이제는 익숙해진 아이였다. 창문을 열어 쪽지의 내용을 보니 문득 한동안 호그와트를 탐험하고 도서관에만 간다고 사람들을 자주 보지 않았다는게 떠올랐다.) 시간 정말 빠르네요~? 오랜만에 나가볼까요. 라비, 리베론에게 안내해 줄래요? ( 알아들은 건지 아닌지 고개를 기웃 거리다 날아가는 까치의 뒤를 산책하듯 걸어갔다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 15일 오후 07:14</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(빤히. 라비는 한참이나 네 얼굴을 올려다 보았다. 둥근 눈동자가 깜빡, 한 번 빠르게 감겼다 뜨이고 나서야 고개를 갸우뚱 기울였다. 이내 별안간 몸을 돌려 기숙사 방문 쪽으로 총, 총, 총. 작은 발톱이 바닥을 가볍게 두드리는 소리를 남기며 앞서가더니, 기숙사 문 앞에 멈춰 섰다. 그리고는 다시 고개를 돌려 네 모습을 바라보았다. 그 앞에서는 무언의 인기척이 느껴지는 듯 하다. 네가 문을 열면, 바로 발견할 수 있는 거리감 앞에서.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 15일 오후 09:48</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">( 조용히 뒤를 따라가다 끝에 멈춘 곳과 라비를 번갈아 보며 잠깐 고민에 빠졌다. 동기의 프라이버시를 존중해 줄까, 아니면 상대도 분명 자신의 혹은 라비의 기척을 느꼈을 텐데 왜 가만히 있는 걸까. 호기심을 충족해볼까. 고민은 짧았고 앞선 건 호기심이었다. 노크도 없이 문을 벌컥 열었다) 리베론~ 저 왔어요! 라비랑 같이요~</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 16일 오전 12:27</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(문 앞을 이리저리 돌아다니며 서성이다가, 벌컥 열린 문 쪽으로 고개를 홱 돌리며 서성이던 발걸음을 멈췄다. 네 목소리와 함께 보이는 라비를 발견하자 쪽지가 제대로 전해졌구나, 하는 안도 섞인 표정이 얼굴 위로 번졌다.) 왔구나! ...문은 원래 그렇게 열고 다니는 거지? (하며 농담을 던지고는, 반가운 마음을 안고 네 앞으로 가까이 다가섰다.) 수업이야 같이 듣겠지만., 요새 못 마주쳤던 것 같아서. 여기저기 좀 돌아다닌 거지?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 16일 오전 12:42</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">탐정의 호기심을 자극한 리베론이 잘못한 거에요~ 왜 문도 안 열고 그러고 계셨던 거에요? (네 말에 키득이며 웃었다.) 리베론 말대로 찾아보다 보니까 수수께끼가 꼬리를 물길래 한동안 도서관에 좀 오래 있었더니~ 이렇게 날짜가 지난 것도 몰랐어요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 16일 오전 12:47</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">라비를 보내고 나니까 내가 어디에 있는지 안 적어 놓은 게 떠오르길래., 여기 있으면 찾을 수 있지 않을까? 하고... (제 말에 웃여보였던 네 웃음엔, 눈을 반쯤 감곤 입술을 살짝 비죽이며 너를 바라봤다.) 오히려 내가 이리저리 돌아다니느라 도서관을 안 가서, 못 마주친 거였구나...~(하고 말하다, 무언가 문득 떠올랐는지 곧바로 발걸음을 빠르게 옮겨 방 서랍을 열고, 안쪽에 넣어 두었던 공책 하나를 꺼내 품에 안은 뒤 제 침대 위에 앉았다. 이내 제 옆자리 손바닥으로 툭툭 치곤) 안 그래도 보여줄 게 있었는데, 통 안 보여서 못 보여줬단 말이지. 빨리 와!</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 16일 오전 01:03</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">정확하게는 제가 아니라 리비가 찾았지만요? (어느 새 자신의 자리로 가서 편안히 쉬고 있는 까치를 바라봤다. 비죽이는 모습에는 한번 더 웃음을 터트렸지만. )평소라면 반대거나 같이 다녔을텐데 어긋났네요~( 네 행동에 고개를 기울이면서도 침대로 가 옆에 앉았다.) 재밌는 일이라도 찾았나요? 아니면 2층 기사상에 대한 건가요?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 16일 오전 01:11</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">라비가...여기에 있다고 알려줬어? (말이 끝나기 무섭게 라비를 얄밉다는 듯 바라보다, 그렇게 똑똑한 줄은 또 몰랐네. 라는 말을 덧붙였다.) 그러게, 그래서... 아픈 거라면 네 방에서 쉬고 있지 않을까 싶어서. 그래서 네 방으로 보냈는데 다행이다~ 당연하지. 2층 기사상도 가끔 가봤어. (네가 제 옆에 앉는 것을 보곤 공책을 무릎 위에 조심스레 펼쳤다. 페이지를 하나씩 넘겨 가며 손끝으로 내용을 가리키며 천천히 짚어 보여 주었다. '초상화. 복도에서 한 이야기들은 다른 층의 초상화가 알 수도 있으니...' '비밀의 방 전설. 슬리데린 성 어딘가에 비밀 방을 만들었다는...' '갑옷. 가까이 지나가면 투구 안쪽에서 시선이 느껴지는 것 같을 때가...' 등등. 여러 곳을 돌아다니며 본 것과 들은 것을 놓치지 않으려는 사람처럼 빼곡하고도, 꼼꼼하게 적힌 내용들이었다.) 아직 외출 허가가 안 돼서 잠가 둘 수 있는 공책은 아니지만., 어때?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 16일 오전 01:39</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">제가 리베론에게 안내해 달라고 했거든요. 라비는 똑똑한 아이에요~ ( 아픈 건 생각도 못했는데, 걱정을 끼쳤나? 안경 너머로 잠시 네 쪽을 응시했다.) 걱정해줘서 고마워요. 참 그 기사상 중에 하나 표시가 살짝 어긋났더라고요. 저도 말해준다는 걸 한동안 도서관으로 가본다고 깜빡했네요! (이어 네가 정리한 걸 짚어가며 설명해주는 걸 드물게 집중하여 경청했다. 설명이 끝나자 저도 모르게 열심히 박수를 치며 감탄하며 바라봤다.) 세상에 리베론 굉장해요-! 이건 리베론만의 미스테리 노트에요 제가 이렇게 봐도 될까 싶을 정도인 걸요! 어서 외출 허가가 났으면 좋겠어요~ 공책도 보러 같이 갈거죠?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 16일 오전 08:28</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">늘 내 물건만 쏙쏙 빼가서 훔쳐 달아나길래., 심도 있는 심부름은 안 시키고 있었건만... 다른 것도 시켜봐야겠네. (안경 너머에 네 눈을 의식하기 보다는, 렌즈에 작게 안경에 비친 제 모습을 빤히 바라보았다.) 움직이는 게 진짜였다고? 내가 너무 빠르게 보면서 지나 갔었나. (막상 제가 네게 건넸던 약속이었지만, 혼자만 들떠있으면 어쩌지 싶은 마음에 네 반응을 보기 전까진 조마조마 하는 눈치였다. 손끝으로 공책 모서리를 만지작거리며 네 표정을 살피다, 이어지는 네 반응에 안도하는 듯 숨을 길게 한 번 뱉었다.) 당연하지. 공책 디자인도 아주~ 중요한 법이야. 외출 허가가 나면, 꼭 공책도. 이것저것 사러 같이 돌아다니자! 왓슨의 선물도, 우리가 공책에 적어나갈 멋진 펜도!</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 16일 오후 03:22</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">훈련이라도 시켜보면 어때요? 의외의 모습을 발견할 수 있을지도 몰라요. 물론 지금도 그러신 거 같지만요. (자신의 수첩을 펼쳐 네게 보여줬다. 한 페이지에 2층 조각상 조사 일지라고 쓰인 곳에는 날짜와 x 표시가 대부분이었으나 한 날짜에만 o라고 써있었다.) 내일이 이 날 이후 한 달째 되는 날이거든요. 그러니까 내일 같이 가봐요. (네가 즐거운 듯 말하는 쇼핑 계획에 잠시 신기한 듯 바라봤다. 자신의 생각 이상으로 네가 기대하는 것 같아서) 리베론은 쇼핑을 좋아하나요? 아니면 ..약속한 노트를 사러가서 즐거운 건가요? 혹시라도 오해할까 말하면 비꼬는 거 아니에요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 17일 오전 12:58</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">어쩌면... 나보단 사야 네가 더 잘 가르칠 수도 있지 않을까란 생각이 들기도 하고~ (네 수첩에 시선을 두자마자 필기법을 유심히 살펴보며, 보고 배워야겠다는... 그런 생각을 하며 네 설명과 수첩 내용을 천천히 들여다봤다. 같이 가자는 말엔 고개를 힘차게 끄덕이며) 호그와트의 탐정 이사야 포드 콜이라 그런가? 네게 들으니 뭔가 기사상이 조금 움직인 것일 뿐인데, 사건이 된 것만 같아.늘 보던 것만 본다고 하면 별로 안 좋아하긴 하지만, 지금은 오랜만에 하는 외출이니까~ 물론 약속한 노트를 사러 가는 게 제일 주된 기대감이긴 해! 왜? 들뜬 게 너무 티나?(흠흠, 하고 소리를 내며 고개를 들고 한껏 올려진 기분을 침착하게 가라앉혀 본다. 그러곤 갑자기 주머니에서 작은 펜을 꺼내 펼쳐진 노트의 빈 공간에 ‘ 사샤 ’ 라고 적고, 그 글씨를 가리키며 고개를 네 쪽으로 돌렸다.) 맞다, 사야. 네가 안 보이는 동안 네 이름을 곰곰이 생각해 보다가, 부르면서도 장난스럽게 웃음이 나오는 게 마음에 들어서. 이렇게 불러 보려고 하는데, 어때?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 17일 오전 01:41</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">이 글씨로요? 무리에요~ ( 자신의 악필을 가리키며 가볍게 웃음을 터트렸다.) 글씨를 교정한다면야 시도는 해볼 수 있겠죠. 올해는 아쉽게도 더 법칙을 발견할 수 없겠지만, 내년에 이어서 찾아봐요. ( 물론 함께 해 주실 거죠? 당연하다는 듯 덧붙이며 네가 쓴 글씨를 보았다.) 사샤라고 불린 적은 한번도 없는데, 저는 좋아요. 애칭이란 건 그 사람이 생각해서 불러주는 거잖아요? 싫을리가 없죠~ 그럼 저도 리베론을 애칭으로 부를까요? 뭐라고 부를까..리비, 어때요?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 18일 오후 08:18</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">올해는 아쉽겠지만... 내년, 내후년에도 우리가 남겨두었던 흔적들은 남아있을테니까. 그때도... (말을 잇다 말고, 처음엔 라비라고 들은 것 같아 잘못 들었나 싶은 얼굴로 라비? 하고 되물었다가, 곧 아, 하고 짧게 소리를 냈다. 처음 불리는 이름이 낯설어, 잠시 눈을 깜빡이며 그 발음을 머릿속에서 굴려 보았다.) 나도 리비라고 불리는 건 처음인데, 뭔가 가벼워진 느낌이네. 리베론이라고 하는 것 보단 빠르게 부를 수도 있는 것 같고~ 라비랑 조오금 헷갈리긴 하지만. (확인하듯 네가 부른 애칭을 혼자 한 번 더 중얼거리곤) 이러면 편지에 이름을 안 써도 서로 누가 누구인지 알 것 같긴 하다~!</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 18일 오후 08:27</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">방학 때 만나서 노트랑 펜도 사러 가요. 모처럼이니까 만년필이나 펜에 각인 해도 괜찮을 것 같죠? 아, 라비가 있길래 일부로 운율을 맞춘 건데 헷갈리면 다르게 부르는 것도 좋아요. ( 제 이름이 불리자 꼬리깃을 한번 기웃 거리는 까치에 짧게 시선을 두었다.) 그죠? 암호명 같기도 하고 헷갈릴 일도 없겠어요!</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 18일 오후 09:16</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(방학 때. 라는 말에 눈을 휘둥그레 떴다.) 방학 때? 정말이지? 그때 가서 서로에게 어울리는 만년필을 골라줘도 좋을 것 같아. 네 말대로 각인하면 더 특별할 것 같고! 이름을 새길지, 애칭을 새길지도 고민인걸~라비와 리비., 최고의 파트너처럼 보이기도 하고. 난 좋아. 라비도 마음에 들어 하지 않을까? (만족스러운 표정으론 네 시선을 따라 까치를 바라보자, 고개를 휙 돌려버리는 까치의 모습에 눈을 반쯤 감고 째려본다.) 호그와트에 사샤리비 비밀 탐정단...~이라고 이름을 날려도 우리인지 모르지 않을까?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 18일 오후 09:35</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">하하 그럼 방학 하고 나서 편지할게요 다이애건 앨리에서 만나요! (네 노트 한쪽에 주소를 적어주었다.) 라비도 마음에 드는데 그걸 표현하지 않는 거 아니에요? (그 반응에 짧게 웃었다.) 이름만으로는 모를 수 있겠지만, 탐정단을 부르면 저희가 가게 될테니 결국엔 알지 않을까요? 이 부분에 대해선 좀 더 고민해봐야겠네요! 방학 때 편지로 의견을 나눠봐요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 18일 오후 09:54</div>
+  </div>
+  <script src="../search.js"></script>
+  <script src="../manifest.js"></script>
+  <script src="../theme.js"></script>
+</body>
+</html>

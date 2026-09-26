@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0월 0일</title>
+  <script id="enty-theme-boot">
+    (function () {
+      var root = document.documentElement;
+      function readable(hex) {
+        var f = function (i) {
+          var v = parseInt(hex.substr(i, 2), 16) / 255;
+          return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+        };
+        var L = 0.2126 * f(1) + 0.7152 * f(3) + 0.0722 * f(5);
+        return 1.05 / (L + 0.05) >= (L + 0.05) / 0.0567 ? "#ffffff" : "#0d141d";
+      }
+      try {
+        var hash = (location.hash.match(/theme=([^&]+)/) || [])[1];
+        var raw = hash
+          ? atob(decodeURIComponent(hash))
+          : localStorage.getItem("enty-theme") || "{}";
+        var state = JSON.parse(raw) || {};
+        var mode = state.mode || "auto";
+        if (mode === "auto") {
+          mode = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        root.setAttribute("data-theme", mode);
+        var custom = (state.custom || {})[mode] || {};
+        for (var key in custom) {
+          if (!/^#[0-9a-f]{6}$/i.test(custom[key])) continue;
+          root.style.setProperty("--accent-" + key, custom[key]);
+          if (key === "이사야" || key === "리베론") {
+            root.style.setProperty("--on-" + key, readable(custom[key]));
+          }
+        }
+      } catch (e) {
+      }
+      try {
+        var saved = JSON.parse(localStorage.getItem("enty-avatars") || "{}");
+        var rules = "";
+        var accounts = {"이사야":"@2nd_Isaiah","리베론":"@2nd_Liberon"};
+        for (var name in accounts) {
+          var gen = root.getAttribute("data-gen-" + name);
+          var url = gen && saved[name + ":" + gen];
+          if (!url || url.slice(0, 11) !== "data:image/") continue;
+          var at = '.ttobot-status[data-account="' + accounts[name] + '"] .ttobot-avatar';
+          rules += at + '{background-image:url("' + url + '");background-size:cover;background-position:center}';
+          rules += at + " img{visibility:hidden}";
+        }
+        if (rules) {
+          var style = document.createElement("style");
+          style.id = "enty-avatar-style";
+          style.textContent = rules;
+          document.head.appendChild(style);
+        }
+      } catch (e) {
+      }
+      try {
+        if (window.self !== window.top) root.classList.add("in-pane");
+      } catch (e) {
+        root.classList.add("in-pane");
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="../style/ttobot.css">
+</head>
+<body>
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">아주 귀한 장면이네., (몸을 천천히 숙여내다, 땅이 점점 가까워질 때쯤 한 손으론 땅을 짚었다. 크게 한숨을 내쉬며 이내 몸을 완전히 낮춰 바닥에 앉곤) 안 그래?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 04일 오후 10:23</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">두 번 다시 못 볼 장면이기도 하죠- (두 번 봐서는 안되기도 하고요. 웃으며 말을 덧붙였다) 또 리베론을 내려다 볼 수 있는 것 역시 귀한 장면이네요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 04일 오후 11:45</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(귀한 장면이란 말엔 눈을 한 번 크게 끔뻑이다, 네 시선에 따라 고개를 올렸다.) 그렇게 귀한 장면이라니., 영광이네 그래. 꽤 바빠 소식이 안 들려오는 줄 알았는데, 용케 여기엔 참전했네. (빈 옆자리를 손으로 한두 번 쓸어내리다가, 와서 앉으라는 뜻을 분명히 하듯 그 자리를 손바닥으로 작게 두드렸다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 05일 오후 01:20</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(생각보다 머리숱이 풍성하네요. 같은 실없는 말을 하며 네 옆자리에 앉았다. 옷이 더러워지던 크게 신경 쓰지 않는 모습이다.) 할 수 밖에 없는 이유가 어떻게든 생기더라고요- 덕분에 수년만에 만난 동창들도 있으니 마냥 나쁘다고 할 일은 아닐지도요?(어깨를 가볍게 으쓱였다) 리베론과도 오랜만에 보는거고. 어떻게 지냈는지 얘기라도 해주세요. 참 이거, 아직도 좋아해요? ( 주머니에서 신 레몬맛의 사탕을 하나 내밀었다. )</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 05일 오후 03:58</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(머리숱... 이란 말엔 괜히 손을 들어 제 머리를 다듬듯 천천히 쓸어내렸다.) 덕분에 이렇게 소식 듣기 전에, 얼굴을 먼저 보네. (내민 사탕을 조심스레 한 손 가득 꾹 쥐곤 고마워. 라는 말을 나지막이 남겼다.) 나야... 졸업하고서는 내 할 일 하면서 조용히 지냈어. 특별할거라곤 없어서 재밌게 할 이야기가 없어서 미안할 정도.., (...) 아직도, 여전히 네 수첩에 무언갈 기록하며 다녀?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 05일 오후 08:32</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">이런 시대니까 특별함보다는 일상을 유지하는게 더 소중하다고 말하는 사람도 있잖아요- 그리고 리베론이 재미없고 원칙적인 건 학창 시절부터 그랬는데 뭘 새삼스럽게 미안하다 해요- (태연하게 웃으면서 악담한다..) 탐정에게 기록은 필수죠. 리베론도 예전부터 기록하고 정리하면서 확실해질 때까지 반복했잖아요-</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 05일 오후 11:00</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">칭찬이야, 욕이야., 이거. (표정 하나 안 변하고 악담을 건네는 모습이 대단하다 싶으면서도 꽤 괘씸해, 정장 깊숙한 안주머니에서 지팡이를 조용히 꺼냈다. 네 신발 쪽으로 지팡이 끝을 대충 겨누고, 둥글게 원을 천천히 그려내자 그 자취를 따라 꽃잎들이 네 신발 위로 어지럽게 내려앉았다.) 어떻게 그리 잘 기억하고 다녀, 대단하네. 수첩, 아직도 보여주고 다니나?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 06일 오후 10:20</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Isaiah">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png" alt="profile" /></div>
+    <div class="ttobot-name">[D81] 이사야 포드 콜</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">제가 동료에게 욕할 리가 없잖아요- (악담한 뒤에 뻔뻔함까지.. 네가 만들어준 꽃잎들을 가만히 보다가 발을 꼼지락거렸다) 수갑을 채우지도 않았는데 이렇게 꼼짝 못하게 만들다니- 새로운 재능을 찾으셨네요.(수첩을 보여주냐는 말에는 고개를 저었다) 그럴 리 가요- 학창 시절에는 탐정 지망생의 기록 노트였다면, 지금은 탐정의 업무 노트인걸요. 함부로 보여주고 다니면 기밀 유출이랍니다 -저 옛날부터 기억하는 거 하나는 특기였다구요? 특히 같은 래번클로에 관한 거라면 좀 더 기억하려고 힘냈죠.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 07일 오전 12:46</div>
+  </div>
+
+<div class="ttobot-status" data-account="@2nd_Liberon">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png" alt="profile" /></div>
+    <div class="ttobot-name">[P 63] 리베론 이노센트</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">뭐., 그럼 난 동료가 아닌갑지. (오키디우스, 하고 나지막이 읊조리자 지팡이 끝에서 작은 꽃송이들이 터지듯 피어났다. 꽃잎들을 향해 입바람으론 후, 하고 짧게 입김을 불어 네가 꼼지락거리는 발 위로 우수수 떨어뜨렸다. 이후 손끝으로 바람을 휘휘 일으켜 꽃잎이 더 어지럽게 흩어지도록 두기도 했고) 기밀이라면 됐다. 어쩔 수 없지. ...게다가 그리 기억을 잘 했으니., 탐정 일도 못 하진 않았겠네. 네가 남의 말을 그냥 흘려듣는 편은 아니었을테니까. (방금전 어지럽힌 네 발등 위에 내려 앉은 수많은 꽃잎들을 가만 바라보다, 그중 한 잎을 골라 집어 네 어깨 위에 가볍게 올려두었다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 5월 07일 오후 03:52</div>
+  </div>
+  <script src="../search.js"></script>
+  <script src="../manifest.js"></script>
+  <script src="../theme.js"></script>
+</body>
+</html>
