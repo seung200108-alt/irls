@@ -108,7 +108,7 @@ window.ENTY_MANIFEST = {
       "gens": {}
     },
     {
-      "file": "toots/0250.html",
+      "file": "toots/0123.html",
       "month": 6,
       "day": 17,
       "part": null,
@@ -123,7 +123,7 @@ window.ENTY_MANIFEST = {
       "gens": {}
     },
     {
-      "file": "toots/12345.html",
+      "file": "toots/0250.html",
       "month": 6,
       "day": 17,
       "part": null,
@@ -165,21 +165,6 @@ window.ENTY_MANIFEST = {
       "avatar": "https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png",
       "text": "리비- 저 왔어요~ ( 일이 끝나고 바로 순간 이동한 후 캠핑장 쪽으로 걸어왔다. 조금 이르게 왔나? 주변을 둘러보며 네가 어딨는지 찾았다.)",
       "count": 43,
-      "gens": {}
-    },
-    {
-      "file": "toots/0123.html",
-      "month": 6,
-      "day": 27,
-      "part": null,
-      "label": "6월 27일",
-      "stamp": "2026년 6월 27일 오전 12:56",
-      "account": "@2nd_Liberon",
-      "character": "리베론",
-      "speaker": "[P 63] 리베론 이노센트",
-      "avatar": "https://assets.occm.cc/accounts/avatars/116/510/440/090/165/110/original/463b317855dfdd36.png",
-      "text": "*안녕하세요 이사야 오너님! 리베론 오너입니다. 이사야와 이 뒤로도 서사와 애프터를 이어가고 싶어서... 혹시 괜찮으시다면 조심스럽게 연공을 요청드리고 싶어 찾아 뵙게 되었습니다. 혹시라도 부담이시라면 부디 편하게 흔적 남겨주시면 감사하겠습니다!",
-      "count": 101,
       "gens": {}
     },
     {
