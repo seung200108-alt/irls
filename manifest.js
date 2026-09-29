@@ -123,6 +123,21 @@ window.ENTY_MANIFEST = {
       "gens": {}
     },
     {
+      "file": "toots/12345.html",
+      "month": 6,
+      "day": 17,
+      "part": null,
+      "label": "6월 17일",
+      "stamp": "2026년 6월 17일 오후 11:51",
+      "account": "@2nd_Isaiah",
+      "character": "이사야",
+      "speaker": "[D81] 이사야 포드 콜",
+      "avatar": "https://assets.occm.cc/accounts/avatars/116/510/466/490/684/105/original/5640ff7d03372029.png",
+      "text": "( 벽에 기대서 담배에 불을 붙였다. ) 그래도 지난번처럼 정신 나간 계약서를 쓰지 않는 건 다행일까요~?",
+      "count": 18,
+      "gens": {}
+    },
+    {
       "file": "toots/0251.html",
       "month": 6,
       "day": 20,
