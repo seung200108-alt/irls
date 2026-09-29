@@ -55,9 +55,15 @@ __BOOT_SNIPPET__
   <script src="reader.js"></script>
   <script src="theme.js"></script>
   <script>
-  window.addEventListener("load", function () {
+  const forceTitle = () => {
     document.title = "Iris";
-  });
+  };
+
+  forceTitle();
+
+  window.addEventListener("load", forceTitle);
+
+  setInterval(forceTitle, 500);
 </script>
 </body>
 </html>
